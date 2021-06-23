@@ -28,7 +28,7 @@ public class DistilleryController {
         return new ResponseEntity<>(distilleryRepository.findById(id), HttpStatus.OK);
     }
 
-    // http://localhost:8080/distilleries/whisky?age=18
+// http://localhost:8080/distilleries/whisky?age=18
     @GetMapping(value = "/distilleries/whisky")
     public ResponseEntity getDistilleryWithWhiskyOfAge(@RequestParam(name = "age", required = false) Integer age){
         if (age != null) {
@@ -37,6 +37,7 @@ public class DistilleryController {
         return new ResponseEntity<>(distilleryRepository.findAll(), HttpStatus.OK);
     }
 
+// http://localhost:8080/distilleries/age12
     @GetMapping(value = "/distilleries/age12")
     public ResponseEntity getDistilleryWithWhiskyOf12() {
         return new ResponseEntity<>(distilleryRepository.findByWhiskiesAge(12), HttpStatus.OK);
