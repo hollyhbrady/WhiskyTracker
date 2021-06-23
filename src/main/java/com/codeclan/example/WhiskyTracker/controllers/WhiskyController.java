@@ -37,6 +37,7 @@ public class WhiskyController {
         return new ResponseEntity<>(whiskyRepository.findAll(), HttpStatus.OK);
     }
 
+// http://localhost:8080/whisky/region?region=Highland
     @GetMapping(value = "/whisky/region")
     public ResponseEntity<List<Whisky>> getWhiskyByRegion(@RequestParam(name = "region", required = false) String region) {
         if (region != null) {
